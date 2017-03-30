@@ -1,6 +1,7 @@
 // Set up MySQL connection.
 var mysql = require("mysql");
 var app = require('../server');
+var sequelize = require ('sequelize');
 
 console.log('--------------the environment we are using----------------');
 console.log(app.settings.env);
@@ -11,7 +12,7 @@ var connection = mysql.createConnection({
   port: 3306,
   host: "localhost",
   user: "root",
-  password: "",
+  password: "raiders76",
   database: "burgers_db"
 });
 }else {
@@ -28,4 +29,4 @@ connection.connect(function (err) {
 });
 
 // Export connection for our ORM to use.
-module.exports = connection;
+module.exports = connection; 
